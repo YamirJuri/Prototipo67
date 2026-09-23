@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sitio institucional del Instituto Superior N° 46 Domingo Guzmán Silva de Santa Fe. Información académica, carreras, horarios, novedades y contacto.">
+  <meta name="theme-color" content="#0d3b66">
+
+  <title>Instituto Superior N° 46 "Domingo Guzmán Silva"</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Acá agregué un acceso rápido para teclado. No cambia el diseño, pero mejora bastante la accesibilidad. -->
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- Acá convertí la barra superior en navegación secundaria porque realmente funciona como un grupo de accesos. -->
+  <nav class="topbar" aria-label="Accesos institucionales">
+    <div class="container topbar__inner">
+      <ul class="topbar__links">
+        <li><a href="#"><i class="fa-solid fa-flag" aria-hidden="true"></i> ARGENTINA</a></li>
+        <li><a href="#"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> CEDOC</a></li>
+        <li><a href="#"><i class="fa-solid fa-network-wired" aria-hidden="true"></i> RED INFoD</a></li>
+        <li><a href="#"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> MAPA</a></li>
+        <li><a href="#"><i class="fa-solid fa-book" aria-hidden="true"></i> BIBLIOTECA</a></li>
+        <li><a href="#"><i class="fa-solid fa-video" aria-hidden="true"></i> VIDEOTUTORIALES</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="header__brand" href="#inicio" aria-label="Ir al inicio del Instituto Superior N° 46">
+        <img src="img/logo.png" alt="Escudo del Instituto Superior N° 46" class="header__logo" onerror="this.style.display='none'">
+        <div class="header__title">
+          <span class="header__eyebrow">INSTITUTO SUPERIOR N° 46</span>
+          <span class="header__name">"DOMINGO GUZMÁN SILVA"</span>
+          <span class="header__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Santa Fe, Argentina</span>
+        </div>
+      </a>
+
+      <a href="login.html" class="btn btn--campus" aria-label="Ingresar al Campus Virtual">
+        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+        <span>
+          <strong>CAMPUS VIRTUAL</strong>
+          <small>Ingresar al Campus</small>
+        </span>
+        <i class="fa-solid fa-chevron-right btn__arrow" aria-hidden="true"></i>
+      </a>
+    </div>
+  </header>
+
+  <!--agregué un botón de menú móvil. En escritorio no altera absolutamente nada. -->
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="container navbar__inner">
+      <button
+        class="navbar__toggle"
+        id="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mainMenu"
+        aria-label="Abrir menú de navegación"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <span>MENÚ</span>
+      </button>
+
+      <ul class="navbar__menu" id="mainMenu">
+        <li class="active">
+          <a href="#inicio" aria-current="page"><i class="fa-solid fa-house" aria-hidden="true"></i> INICIO</a>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="#" aria-haspopup="true">
+            <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+            INSTITUCIONAL
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown">
+            <li><a href="#">Historia</a></li>
+            <li><a href="#">Autoridades</a></li>
+            <li><a href="#">Misión y Visión</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="#" aria-haspopup="true">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            ACADÉMICO
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown">
+            <li><a href="#">Carreras</a></li>
+            <li><a href="#">Planes de estudio</a></li>
+            <li><a href="#">Calendario académico</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="#" aria-haspopup="true">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            ESTUDIANTES
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown">
+            <li><a href="#">Inscripciones</a></li>
+            <li><a href="#">Horarios</a></li>
+            <li><a href="#">Mesas de examen</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#novedades"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> NOTICIAS</a></li>
+        <li><a href="#contacto"><i class="fa-regular fa-envelope" aria-hidden="true"></i> CONTACTO</a></li>
+      </ul>
+
+      <button class="navbar__search" type="button" aria-label="Buscar en el sitio">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      </button>
+    </div>
+  </nav>
+
+  <main id="contenido-principal">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="hero__eyebrow">INSTITUTO SUPERIOR N° 46</p>
+          <h1 id="hero-title">Formación, compromiso<br><span>y futuro</span></h1>
+          <p>Más de 50 años formando profesionales con excelencia académica y compromiso con la comunidad.</p>
+          <a href="#" class="btn btn--outline">
+            CONOCÉ NUESTRA INSTITUCIÓN
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Acá los dots dejaron de ser spans clickeables y pasaron a ser botones reales. Visualmente siguen iguales. -->
+      <div class="hero__dots" aria-label="Selector de portada">
+        <button class="dot active" type="button" aria-label="Mostrar portada 1" aria-pressed="true"></button>
+        <button class="dot" type="button" aria-label="Mostrar portada 2" aria-pressed="false"></button>
+        <button class="dot" type="button" aria-label="Mostrar portada 3" aria-pressed="false"></button>
+      </div>
+    </section>
+
+    <section class="quick-access" aria-labelledby="quick-title">
+      <div class="container">
+        <div class="section-heading section-heading--compact">
+          <p class="section-heading__eyebrow">INFORMACIÓN ACADÉMICA</p>
+          <h2 id="quick-title">Accesos rápidos</h2>
+        </div>
+
+        <div class="quick-access__grid">
+          <a href="#" class="quick-card">
+            <div class="quick-card__icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></div>
+            <h3>HORARIOS</h3>
+            <p>Consultá los horarios de todas las carreras</p>
+            <span class="quick-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="#" class="quick-card">
+            <div class="quick-card__icon"><i class="fa-solid fa-file-pen" aria-hidden="true"></i></div>
+            <h3>MESAS DE EXAMEN</h3>
+            <p>Fechas y turnos de mesas examinadoras</p>
+            <span class="quick-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="#" class="quick-card">
+            <div class="quick-card__icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+            <h3>CARRERAS</h3>
+            <p>Conocé nuestra oferta académica</p>
+            <span class="quick-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="#" class="quick-card">
+            <div class="quick-card__icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div>
+            <h3>INSCRIPCIONES</h3>
+            <p>Información para ingresantes</p>
+            <span class="quick-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="#novedades" class="quick-card">
+            <div class="quick-card__icon"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></div>
+            <h3>NOVEDADES</h3>
+            <p>Últimas noticias y comunicados</p>
+            <span class="quick-card__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="news" id="novedades" aria-labelledby="news-title">
+      <div class="container">
+        <div class="news__header">
+          <div>
+            <p class="section-heading__eyebrow">ACTUALIDAD INSTITUCIONAL</p>
+            <h2 id="news-title">NOVEDADES</h2>
+          </div>
+          <a href="#" class="btn btn--ghost">VER TODAS LAS NOVEDADES <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="news__grid">
+          <article class="news-card">
+            <div class="news-card__img news-card__img--1" role="img" aria-label="Material de estudio y cuadernos">
+              <time class="news-card__date" datetime="2024-05-20"><strong>20</strong>MAY</time>
+            </div>
+            <div class="news-card__body">
+              <h3>Inscripciones abiertas 2024</h3>
+              <p>Ya podés inscribirte a las carreras del Instituto Superior N° 46.</p>
+              <a href="#">LEER MÁS <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card__img news-card__img--2" role="img" aria-label="Aula del instituto">
+              <time class="news-card__date" datetime="2024-05-15"><strong>15</strong>MAY</time>
+            </div>
+            <div class="news-card__body">
+              <h3>Nuevo Ciclo Lectivo</h3>
+              <p>Comenzamos un nuevo año académico lleno de desafíos y oportunidades.</p>
+              <a href="#">LEER MÁS <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card__img news-card__img--3" role="img" aria-label="Estudiante utilizando una computadora">
+              <time class="news-card__date" datetime="2024-05-08"><strong>08</strong>MAY</time>
+            </div>
+            <div class="news-card__body">
+              <h3>Taller de Orientación Vocacional</h3>
+              <p>Destinado a estudiantes del último año del nivel secundario.</p>
+              <a href="#">LEER MÁS <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-stats" aria-labelledby="about-title">
+      <div class="container about-stats__inner">
+        <div class="about-stats__about">
+          <div class="about-stats__icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></div>
+          <div>
+            <p class="about-stats__eyebrow">NUESTRA IDENTIDAD</p>
+            <h2 id="about-title">SOBRE NOSOTROS</h2>
+            <p>El Instituto Superior N° 46 "Domingo Guzmán Silva" tiene como misión formar profesionales comprometidos con la excelencia, la ética y el desarrollo de la sociedad.</p>
+            <a href="#" class="btn btn--white-outline">CONOCER MÁS</a>
+          </div>
+        </div>
+
+        <div class="about-stats__numbers" aria-label="Datos destacados del instituto">
+          <div class="stat">
+            <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+            <strong>50+</strong>
+            <span>Años de historia</span>
+          </div>
+          <div class="stat">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <strong>1200+</strong>
+            <span>Estudiantes</span>
+          </div>
+          <div class="stat">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            <strong>8</strong>
+            <span>Carreras</span>
+          </div>
+          <div class="stat">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+            <strong>100+</strong>
+            <span>Docentes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <div class="container footer__grid">
+      <div class="footer__col footer__brand">
+        <div class="footer__logo-row">
+          <img src="img/logo.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+          <div>
+            <strong>INSTITUTO SUPERIOR N° 46</strong>
+            <span>"Domingo Guzmán Silva"</span>
+          </div>
+        </div>
+
+        <!-- Acá usé address porque estos datos sí son información institucional de contacto. -->
+        <address class="footer__address">
+          <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>San Martín 2467<br>Santa Fe, Argentina</span></p>
+          <p><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+543424572467">(0342) 457-2467</a></p>
+          <p><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:instituto46@educativa.edu.ar">instituto46@educativa.edu.ar</a></p>
+        </address>
+
+        <div class="footer__social" aria-label="Redes sociales">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h2>ENLACES ÚTILES</h2>
+        <ul>
+          <li><a href="#">Calendario Académico</a></li>
+          <li><a href="#">Normativas</a></li>
+          <li><a href="#">Biblioteca</a></li>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Transparencia</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h2>INFORMACIÓN</h2>
+        <ul>
+          <li><a href="#">Autoridades</a></li>
+          <li><a href="#">Reglamentos</a></li>
+          <li><a href="#">Trámites</a></li>
+          <li><a href="#">Trabajá con nosotros</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h2>HORARIOS DE ATENCIÓN</h2>
+        <p class="footer__hours">
+          <i class="fa-regular fa-clock" aria-hidden="true"></i>
+          <span><strong>Lunes a Viernes</strong><br>7:00 a 12:00 hs.<br>18:00 a 22:00 hs.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; <span id="currentYear">2026</span> Instituto Superior N° 46 "Domingo Guzmán Silva". Todos los derechos reservados.</p>
+      </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Volver arriba">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

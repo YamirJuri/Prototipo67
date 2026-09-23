@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acceso al Campus Virtual del Instituto Superior N° 46 Domingo Guzmán Silva.">
+  <meta name="theme-color" content="#0d3b66">
+  <title>Campus Virtual | Instituto Superior N° 46</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="login-page">
+  <a class="skip-link" href="#login-main">Saltar al formulario de acceso</a>
+
+  <!-- Acá saqué la línea azul suelta de arriba y armé un encabezado institucional completo -->
+  <header class="login-header">
+    <div class="container login-header__inner">
+      <a class="login-brand" href="index.html" aria-label="Volver al inicio del Instituto Superior N° 46">
+        <div class="login-brand__logo">
+          <img src="img/logo.png" alt="Escudo del Instituto Superior N° 46" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <span class="login-brand__fallback" aria-hidden="true">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </span>
+        </div>
+
+        <div class="login-brand__text">
+          <span>INSTITUTO SUPERIOR N° 46</span>
+          <strong>"DOMINGO GUZMÁN SILVA"</strong>
+          <small><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Santa Fe, Argentina</small>
+        </div>
+      </a>
+
+      <a class="login-header__back" href="index.html">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        Volver al sitio institucional
+      </a>
+    </div>
+  </header>
+
+  <main class="login-main" id="login-main">
+    <div class="container">
+      <div class="login-panel">
+        <!-- Acá dejé una presentación mucho más sobria-->
+        <section class="login-institution" aria-labelledby="campus-title">
+          <div class="login-institution__content">
+            <span class="login-institution__label">CAMPUS VIRTUAL</span>
+            <h1 id="campus-title">Acceso a la comunidad educativa</h1>
+            <p>
+              Ingresá con tus credenciales institucionales para acceder a contenidos,
+              comunicaciones y recursos académicos.
+            </p>
+
+            <div class="login-institution__divider"></div>
+
+            <div class="login-institution__info">
+              <div>
+                <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                <span>
+                  <strong>Instituto Superior N° 46</strong>
+                  <small>Domingo Guzmán Silva</small>
+                </span>
+              </div>
+
+              <div>
+                <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+                <span>
+                  <strong>¿Necesitás asistencia?</strong>
+                  <small>Consultá con la administración del Instituto.</small>
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--simplifiqué el formulario-->
+        <section class="login-access" aria-labelledby="login-title">
+          <div class="login-access__header">
+            <span class="login-access__icon" aria-hidden="true">
+              <i class="fa-solid fa-user"></i>
+            </span>
+
+            <div>
+              <span class="login-access__eyebrow">ACCESO AL CAMPUS</span>
+              <h2 id="login-title">Ingresar</h2>
+              <p>Completá tus datos para continuar.</p>
+            </div>
+          </div>
+
+          <form class="login-form" action="#" method="post">
+            <div class="form-group">
+              <label for="usuario">Usuario</label>
+              <div class="form-control">
+                <i class="fa-regular fa-user" aria-hidden="true"></i>
+                <input type="text" id="usuario" name="usuario" autocomplete="username" placeholder="Ingresá tu usuario" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-label-row">
+                <label for="clave">Clave</label>
+                <a href="#" class="login-link">¿Olvidaste tus datos?</a>
+              </div>
+
+              <div class="form-control">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                <input type="password" id="clave" name="clave" autocomplete="current-password" placeholder="Ingresá tu clave" required>
+                <button class="password-toggle" id="passwordToggle" type="button" aria-label="Mostrar clave">
+                  <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="login-options">
+              <label class="login-check">
+                <input type="checkbox" name="recordarme">
+                <span>Recordarme</span>
+              </label>
+            </div>
+
+            <button class="login-submit" type="submit">
+              Ingresar al Campus
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </form>
+
+          <p class="login-access__notice">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            Acceso exclusivo para estudiantes, docentes y personal de la institución.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Acá dejé el footer con la misma estructura visual del index, pero con enlaces útiles para alguien que está entrando al campus -->
+  <footer class="footer" id="contacto">
+    <div class="container footer__grid">
+      <div class="footer__col footer__brand">
+        <div class="footer__logo-row">
+          <img src="img/logo.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+          <div>
+            <strong>INSTITUTO SUPERIOR N° 46</strong>
+            <span>"Domingo Guzmán Silva"</span>
+          </div>
+        </div>
+
+        <address class="footer__address">
+          <p>
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span>San Martín 2467<br>Santa Fe, Argentina</span>
+          </p>
+          <p>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <a href="tel:+543424572467">(0342) 457-2467</a>
+          </p>
+          <p>
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:instituto46@educativa.edu.ar">instituto46@educativa.edu.ar</a>
+          </p>
+        </address>
+
+        <div class="footer__social" aria-label="Redes sociales">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h2>ACCESO Y AYUDA</h2>
+        <ul>
+          <li><a href="#">¿Olvidaste tus datos?</a></li>
+          <li><a href="#">Ayuda para ingresar</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contacto institucional</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h2>INFORMACIÓN ACADÉMICA</h2>
+        <ul>
+          <li><a href="index.html#novedades">Novedades</a></li>
+          <li><a href="#">Calendario académico</a></li>
+          <li><a href="#">Horarios</a></li>
+          <li><a href="#">Mesas de examen</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h2>HORARIOS DE ATENCIÓN</h2>
+        <p class="footer__hours">
+          <i class="fa-regular fa-clock" aria-hidden="true"></i>
+          <span>
+            <strong>Lunes a Viernes</strong><br>
+            7:00 a 12:00 hs.<br>
+            18:00 a 22:00 hs.
+          </span>
+        </p>
+
+        <a class="footer__back-link" href="index.html">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          Volver al sitio institucional
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; <span id="currentYear">2026</span> Instituto Superior N° 46 "Domingo Guzmán Silva". Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/login.js"></script>
+  <script>
+    const currentYear = document.getElementById("currentYear");
+    if (currentYear) currentYear.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

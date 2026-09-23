@@ -1,0 +1,1825 @@
+/* Instituto Superior N° 46 "Domingo Guzmán Silva" — Prototipo */
+
+:root {
+  --azul-oscuro: #0d2c54;
+  --azul-header: #0a2540;
+  --azul-navbar: #0d3b66;
+  --azul-hero: #0d2c54;
+  --verde: #2fa89a;
+  --verde-oscuro: #24897d;
+  --gris-texto: #4a5568;
+  --gris-claro: #f4f6f8;
+  --blanco: #ffffff;
+  --borde: #e2e8f0;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  color: #333;
+  line-height: 1.5;
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+ul { list-style: none; }
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/*  TOPBAR  */
+.topbar {
+  background: var(--azul-header);
+  font-size: 12px;
+}
+
+.topbar__inner { display: flex; justify-content: flex-end; }
+
+.topbar__links {
+  display: flex;
+  gap: 22px;
+  padding: 8px 0;
+}
+
+.topbar__links li {
+  color: #cdd8e6;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: .3px;
+  cursor: pointer;
+}
+
+.topbar__links li:hover { color: var(--blanco); }
+
+/*  HEADER  */
+.header {
+  background: var(--blanco);
+  padding: 18px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__logo {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+}
+
+.header__title { display: flex; flex-direction: column; }
+
+.header__eyebrow {
+  font-size: 13px;
+  color: var(--gris-texto);
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+
+.header__title h1 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--azul-oscuro);
+  margin: 2px 0;
+}
+
+.header__location {
+  font-size: 13px;
+  color: var(--verde-oscuro);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+}
+
+.btn--campus {
+  background: var(--verde);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  transition: background .2s ease;
+  white-space: nowrap;
+}
+
+.btn--campus:hover { background: var(--verde-oscuro); }
+
+.btn--campus i:first-child { font-size: 20px; }
+
+.btn--campus span { display: flex; flex-direction: column; line-height: 1.2; }
+
+.btn--campus strong { font-size: 14px; font-family: var(--font-heading); }
+
+.btn--campus small { font-size: 11px; opacity: .9; }
+
+.btn__arrow { margin-left: 4px; font-size: 12px; }
+
+/*  NAVBAR  */
+.navbar { background: var(--azul-navbar); }
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__menu {
+  display: flex;
+}
+
+.navbar__menu > li {
+  position: relative;
+}
+
+.navbar__menu > li > a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 18px;
+  color: #d7e2ef;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  transition: background .2s ease, color .2s ease;
+}
+
+.navbar__menu > li.active > a,
+.navbar__menu > li > a:hover {
+  background: var(--verde);
+  color: var(--blanco);
+}
+
+.navbar__menu .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--blanco);
+  min-width: 200px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  border-radius: 0 0 6px 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: all .2s ease;
+  z-index: 50;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar__menu .dropdown li a {
+  display: block;
+  padding: 10px 18px;
+  color: var(--gris-texto);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.navbar__menu .dropdown li a:hover {
+  background: var(--gris-claro);
+  color: var(--verde-oscuro);
+}
+
+.navbar__search {
+  background: none;
+  border: none;
+  color: #d7e2ef;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 16px 20px;
+}
+
+.navbar__search:hover { color: var(--verde); }
+
+/*  HERO  */
+.hero {
+  position: relative;
+  min-height: 460px;
+  background: linear-gradient(100deg, var(--azul-hero) 38%, rgba(13,44,84,.35) 70%),
+              url('https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1600&auto=format&fit=crop') right center / cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hero__inner { position: relative; z-index: 2; }
+
+.hero__text { max-width: 560px; color: var(--blanco); }
+
+.hero__text h2 {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.hero__text h2 span { color: var(--verde); font-weight: 800; }
+
+.hero__text p {
+  font-size: 16px;
+  color: #dbe4ee;
+  margin-bottom: 28px;
+  max-width: 460px;
+}
+
+.btn--outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--verde);
+  color: var(--blanco);
+  padding: 14px 22px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  transition: background .2s ease;
+}
+
+.btn--outline:hover { background: var(--verde-oscuro); }
+
+.hero__dots {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.dot {
+  width: 26px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,.4);
+  cursor: pointer;
+}
+
+.dot.active { background: var(--verde); width: 34px; }
+
+/*  QUICK ACCESS  */
+.quick-access {
+  background: var(--gris-claro);
+  padding: 55px 0 40px;
+}
+
+.quick-access__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 22px;
+}
+
+.quick-card {
+  background: var(--blanco);
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(13,44,84,.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.quick-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(13,44,84,.12);
+}
+
+.quick-card__icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--blanco);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.quick-card h3 {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+  margin-bottom: 8px;
+  letter-spacing: .3px;
+}
+
+.quick-card p {
+  font-size: 13px;
+  color: var(--gris-texto);
+  margin-bottom: 14px;
+}
+
+.quick-card__arrow {
+  color: var(--verde-oscuro);
+  font-size: 14px;
+}
+
+/*  NOVEDADES  */
+.news { padding: 60px 0; background: var(--blanco); }
+
+.news__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.news__header h2 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--azul-oscuro);
+  letter-spacing: .3px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.news__header h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 46px;
+  height: 3px;
+  background: var(--verde);
+}
+
+.btn--ghost {
+  border: 1.5px solid var(--verde);
+  color: var(--verde-oscuro);
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all .2s ease;
+}
+
+.btn--ghost:hover { background: var(--verde); color: var(--blanco); }
+
+.news__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.news-card {
+  background: var(--blanco);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(13,44,84,.08);
+  transition: transform .2s ease;
+}
+
+.news-card:hover { transform: translateY(-4px); }
+
+.news-card__img {
+  height: 190px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.news-card__img--1 { background-image: linear-gradient(0deg, rgba(13,44,84,.15), rgba(13,44,84,.15)), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800&auto=format&fit=crop'); }
+.news-card__img--2 { background-image: linear-gradient(0deg, rgba(13,44,84,.15), rgba(13,44,84,.15)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop'); }
+.news-card__img--3 { background-image: linear-gradient(0deg, rgba(13,44,84,.15), rgba(13,44,84,.15)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop'); }
+
+.news-card__date {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.news-card__date strong { display: block; font-size: 18px; font-family: var(--font-heading); }
+
+.news-card__body { padding: 22px; }
+
+.news-card__body h3 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+  margin-bottom: 8px;
+}
+
+.news-card__body p {
+  font-size: 13px;
+  color: var(--gris-texto);
+  margin-bottom: 14px;
+}
+
+.news-card__body a {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/*  ABOUT + STATS  */
+.about-stats {
+  background: var(--verde);
+  color: var(--blanco);
+  padding: 45px 0;
+}
+
+.about-stats__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-stats__about {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.about-stats__icon {
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  border-radius: 50%;
+  background: var(--blanco);
+  color: var(--verde);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-stats__about h3 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: .3px;
+  margin-bottom: 8px;
+}
+
+.about-stats__about p {
+  font-size: 13px;
+  color: #e7f7f4;
+  margin-bottom: 14px;
+  max-width: 380px;
+}
+
+.btn--white-outline {
+  display: inline-block;
+  border: 1.5px solid var(--blanco);
+  color: var(--blanco);
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: all .2s ease;
+}
+
+.btn--white-outline:hover { background: var(--blanco); color: var(--verde-oscuro); }
+
+.about-stats__numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-left: 1px solid rgba(255,255,255,.3);
+}
+
+.stat {
+  text-align: center;
+  padding: 0 10px;
+  border-right: 1px solid rgba(255,255,255,.3);
+}
+
+.stat i { font-size: 26px; margin-bottom: 8px; }
+
+.stat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.stat span { font-size: 12px; color: #e7f7f4; }
+
+/* ============ FOOTER ============ */
+.footer { background: var(--azul-header); color: #c9d5e3; }
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 55px 20px 40px;
+}
+
+.footer__logo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer__logo-row img { width: 46px; height: 46px; }
+
+.footer__logo-row strong {
+  display: block;
+  color: var(--blanco);
+  font-family: var(--font-heading);
+  font-size: 14px;
+}
+
+.footer__logo-row span { font-size: 12px; }
+
+.footer__brand p {
+  font-size: 13px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.footer__social {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.footer__social a {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease;
+}
+
+.footer__social a:hover { background: var(--verde); }
+
+.footer__col h4 {
+  color: var(--blanco);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  margin-bottom: 18px;
+}
+
+.footer__col ul li { margin-bottom: 10px; }
+
+.footer__col ul li a { font-size: 13px; transition: color .2s ease; }
+
+.footer__col ul li a:hover { color: var(--verde); }
+
+.footer__hours {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  align-items: flex-start;
+}
+
+.footer__hours strong { color: var(--blanco); }
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding: 18px 0;
+}
+
+.footer__bottom p {
+  text-align: center;
+  font-size: 12px;
+  color: #93a3b8;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--blanco);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all .25s ease;
+}
+
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+
+.back-to-top:hover { background: var(--verde-oscuro); }
+
+/* AJUSTES INSTITUCIONALES Y RESPONSIVE*/
+
+/* Acá agregué estados de foco visibles. No cambian el look normal, pero hacen que teclado y accesibilidad estén mucho mejor resueltos. */
+:focus-visible {
+  outline: 3px solid rgba(47, 168, 154, .45);
+  outline-offset: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--blanco);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 9999;
+  padding: 10px 14px;
+  border-radius: 4px;
+  background: var(--blanco);
+  color: var(--azul-oscuro);
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform .2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Acá los elementos de la topbar pasan a ser links reales, pero conservan el estilo */
+.topbar__links a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+}
+
+.topbar__links a:hover {
+  color: var(--blanco);
+}
+
+/* Acá cambié el h1 visual del encabezado por una clase. El h1 real ahora queda en el hero, que es semánticamente más lógico. */
+.header__name {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--azul-oscuro);
+  margin: 2px 0;
+}
+
+.header__brand {
+  min-width: 0;
+}
+
+.header__title {
+  min-width: 0;
+}
+
+.navbar {
+  position: relative;
+  z-index: 100;
+}
+
+.navbar__toggle {
+  display: none;
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  background: transparent;
+  color: var(--blanco);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 14px 0;
+}
+
+.navbar__toggle i {
+  font-size: 17px;
+}
+
+/* Acá agregué soporte para teclado en los desplegables, no solamente hover de mouse. */
+.has-dropdown:focus-within .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar__menu > li > a,
+.dropdown a,
+.btn,
+.quick-card,
+.news-card__body a,
+.footer a {
+  transition:
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.hero {
+  isolation: isolate;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(6, 31, 55, .12), transparent 58%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__eyebrow,
+.section-heading__eyebrow,
+.about-stats__eyebrow {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.hero__eyebrow {
+  color: #cfe7e3 !important;
+  margin-bottom: 8px !important;
+}
+
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.section-heading--compact {
+  display: none;
+}
+
+.section-heading__eyebrow {
+  color: var(--verde-oscuro);
+  margin-bottom: 5px;
+}
+
+.about-stats__eyebrow {
+  color: rgba(255,255,255,.78);
+  margin-bottom: 5px;
+}
+
+.about-stats__about h2 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: .3px;
+  margin-bottom: 8px;
+}
+
+/* Acá los dots siguen viéndose igual, pero ahora son botones accesibles. */
+.dot {
+  border: 0;
+  padding: 0;
+}
+
+.dot:focus-visible {
+  outline-color: var(--blanco);
+}
+
+/* Acá eliminé el estilo cursiva por defecto de address para que visualmente no cambie el footer. */
+.footer__address {
+  font-style: normal;
+}
+
+.footer__address p {
+  font-size: 13px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.footer__address a:hover {
+  color: var(--verde);
+}
+
+.footer__col h2 {
+  color: var(--blanco);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  margin-bottom: 18px;
+}
+
+/* Acá hice que los tamaños respiren un poco mejor sin cambiar el lenguaje visual general. */
+.quick-card {
+  height: 100%;
+}
+
+.news-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.news-card__body a {
+  margin-top: auto;
+}
+
+/* RESPONSIVE*/
+
+/* Acá ajusté primero notebooks y tablets grandes. Antes saltaba muy rápido de 5 columnas a 3. */
+@media (max-width: 1100px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .quick-access__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .navbar__menu > li > a {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .navbar__search {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .topbar__links {
+    gap: 14px;
+  }
+
+  .header__name {
+    font-size: 21px;
+  }
+
+  .news__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-stats__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats__about p {
+    max-width: 700px;
+  }
+
+  .about-stats__numbers {
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,.3);
+    padding-top: 24px;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+
+  .footer__grid > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Acá cambia la navegación a móvil de verdad: botón hamburguesa, menú plegable y dropdowns que no se salen de pantalla. */
+@media (max-width: 820px) {
+  .topbar {
+    display: none;
+  }
+
+  .header {
+    padding: 14px 0;
+  }
+
+  .header__inner {
+    gap: 14px;
+  }
+
+  .header__logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .header__eyebrow {
+    font-size: 11px;
+  }
+
+  .header__name {
+    font-size: 18px;
+    line-height: 1.15;
+  }
+
+  .header__location {
+    font-size: 12px;
+  }
+
+  .btn--campus {
+    padding: 10px 14px;
+  }
+
+  .btn--campus small,
+  .btn__arrow {
+    display: none;
+  }
+
+  .navbar__inner {
+    min-height: 52px;
+    position: relative;
+  }
+
+  .navbar__toggle {
+    display: inline-flex;
+  }
+
+  .navbar__search {
+    margin-left: auto;
+  }
+
+  .navbar__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 24px;
+    right: 24px;
+    width: auto;
+    flex-direction: column;
+    background: var(--azul-navbar);
+    box-shadow: 0 14px 30px rgba(0,0,0,.22);
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+
+  .navbar__menu.is-open {
+    display: flex;
+  }
+
+  .navbar__menu > li > a {
+    justify-content: flex-start;
+    padding: 14px 18px;
+    border-top: 1px solid rgba(255,255,255,.07);
+  }
+
+  .navbar__menu .dropdown {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: rgba(255,255,255,.96);
+  }
+
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown {
+    display: block;
+  }
+
+  .navbar__menu .dropdown li a {
+    padding-left: 44px;
+  }
+
+  .hero {
+    min-height: 420px;
+    background-position: 62% center;
+  }
+
+  .hero__text h1 {
+    font-size: 36px;
+  }
+
+  .quick-access {
+    padding-top: 42px;
+  }
+
+  .quick-access__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__grid > :last-child {
+    grid-column: auto;
+  }
+}
+
+/* Acá está el ajuste fuerte para celulares. Todo pasa a una columna y se prioriza lectura antes que decoración. */
+@media (max-width: 600px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .header__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .header__brand {
+    width: 100%;
+  }
+
+  .btn--campus {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn--campus small,
+  .btn__arrow {
+    display: initial;
+  }
+
+  .navbar__menu {
+    left: 18px;
+    right: 18px;
+  }
+
+  .hero {
+    min-height: 470px;
+    padding: 70px 0 82px;
+    text-align: left;
+    background:
+      linear-gradient(90deg, rgba(13,44,84,.95) 0%, rgba(13,44,84,.78) 58%, rgba(13,44,84,.45) 100%),
+      url('https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1000&auto=format&fit=crop') center / cover no-repeat;
+  }
+
+  .hero__text {
+    max-width: 100%;
+  }
+
+  .hero__text h1 {
+    font-size: clamp(31px, 9vw, 38px);
+  }
+
+  .hero__text p {
+    font-size: 15px;
+  }
+
+  .btn--outline {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .section-heading--compact {
+    display: block;
+  }
+
+  .quick-access__grid,
+  .news__grid,
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-card {
+    display: grid;
+    grid-template-columns: 52px 1fr auto;
+    grid-template-areas:
+      "icon title arrow"
+      "icon text arrow";
+    align-items: center;
+    column-gap: 14px;
+    text-align: left;
+    padding: 20px;
+  }
+
+  .quick-card__icon {
+    grid-area: icon;
+    width: 52px;
+    height: 52px;
+    margin: 0;
+  }
+
+  .quick-card h3 {
+    grid-area: title;
+    margin: 0 0 4px;
+  }
+
+  .quick-card p {
+    grid-area: text;
+    margin: 0;
+  }
+
+  .quick-card__arrow {
+    grid-area: arrow;
+  }
+
+  .news {
+    padding: 48px 0;
+  }
+
+  .news__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .btn--ghost {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .news-card__img {
+    height: 210px;
+  }
+
+  .about-stats__about {
+    flex-direction: column;
+  }
+
+  .about-stats__numbers {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 0;
+  }
+
+  .stat {
+    padding: 4px 10px;
+  }
+
+  .stat:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .footer__grid {
+    padding-top: 42px;
+  }
+
+  .back-to-top {
+    right: 18px;
+    bottom: 18px;
+  }
+}
+
+/* Acá pulí los teléfonos chicos para evitar textos apretados o botones saliéndose. */
+@media (max-width: 390px) {
+  .header__logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .header__name {
+    font-size: 16px;
+  }
+
+  .header__location {
+    font-size: 11px;
+  }
+
+  .btn--campus {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .hero__text h1 {
+    font-size: 30px;
+  }
+
+  .quick-card {
+    grid-template-columns: 46px 1fr auto;
+    padding: 18px 16px;
+  }
+
+  .quick-card__icon {
+    width: 46px;
+    height: 46px;
+    font-size: 19px;
+  }
+
+  .about-stats__numbers {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.22);
+    padding-bottom: 18px;
+  }
+
+  .stat:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* Acá respeto a usuarios que prefieren menos animaciones. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* LOGIN DEL CAMPUS */
+
+/* Acá cambié el fondo por uno neutro. La idea es que se sienta institución educativa y no producto tecnológico. */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f3f5f7;
+  color: #263342;
+}
+
+/* Acá saqué la rayita azul superior que quedaba flotando sin cumplir ninguna función. */
+.login-header {
+  background: var(--blanco);
+  border-bottom: 1px solid #dce3e9;
+}
+
+.login-header__inner {
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+}
+
+.login-brand__logo {
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  display: grid;
+  place-items: center;
+}
+
+.login-brand__logo img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.login-brand__fallback {
+  width: 58px;
+  height: 58px;
+  display: none;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--azul-navbar);
+  color: var(--blanco);
+  font-size: 22px;
+}
+
+.login-brand__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.login-brand__text > span {
+  margin-bottom: 2px;
+  color: #667689;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+.login-brand__text strong {
+  color: var(--azul-oscuro);
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.login-brand__text small {
+  margin-top: 4px;
+  color: var(--verde-oscuro);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.login-header__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--azul-oscuro);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.login-header__back:hover {
+  color: var(--verde-oscuro);
+}
+
+/* Acá centré todo el acceso en una única pieza. Es más parecido a un campus real y queda mucho menos "landing page". */
+.login-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 52px 0;
+}
+
+.login-panel {
+  max-width: 980px;
+  min-height: 520px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+  overflow: hidden;
+  border: 1px solid #d8e0e7;
+  border-radius: 8px;
+  background: var(--blanco);
+  box-shadow: 0 10px 28px rgba(13,44,84,.08);
+}
+
+/* Acá usé el azul institucional como bloque principal, sin degradados, brillos ni formas decorativas. */
+.login-institution {
+  display: flex;
+  align-items: center;
+  background: var(--azul-navbar);
+  color: var(--blanco);
+}
+
+.login-institution__content {
+  width: 100%;
+  padding: 54px 52px;
+}
+
+.login-institution__label {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #a9d9d2;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.login-institution h1 {
+  max-width: 430px;
+  margin: 0 0 18px;
+  color: var(--blanco);
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+.login-institution > .login-institution__content > p {
+  max-width: 430px;
+  color: #d7e3ee;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.login-institution__divider {
+  width: 44px;
+  height: 3px;
+  margin: 30px 0 26px;
+  background: var(--verde);
+}
+
+.login-institution__info {
+  display: grid;
+  gap: 18px;
+}
+
+.login-institution__info > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.login-institution__info i {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 50%;
+  color: #cfe8e4;
+  font-size: 13px;
+}
+
+.login-institution__info span {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-institution__info strong {
+  color: var(--blanco);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.login-institution__info small {
+  margin-top: 2px;
+  color: #b8c9d7;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* Acá el formulario quedó deliberadamente sencillo. Menos iconos protagonistas, menos sombras y más jerarquía tipográfica. */
+.login-access {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 46px;
+}
+
+.login-access__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.login-access__icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  background: #eaf1f7;
+  color: var(--azul-navbar);
+  font-size: 15px;
+}
+
+.login-access__eyebrow {
+  color: var(--verde-oscuro);
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.login-access__header h2 {
+  margin: 2px 0 3px;
+  color: var(--azul-oscuro);
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.login-access__header p {
+  color: #748295;
+  font-size: 13px;
+}
+
+.login-form {
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #31445a;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.form-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.login-link {
+  margin-bottom: 7px;
+  color: var(--verde-oscuro);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.form-control {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #cfd8e1;
+  border-radius: 4px;
+  background: var(--blanco);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.form-control:focus-within {
+  border-color: var(--azul-navbar);
+  box-shadow: 0 0 0 2px rgba(13,59,102,.08);
+}
+
+.form-control > i {
+  width: 42px;
+  text-align: center;
+  color: #8290a0;
+  font-size: 13px;
+}
+
+.form-control input {
+  min-width: 0;
+  flex: 1;
+  height: 46px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #263342;
+  font: inherit;
+  font-size: 14px;
+}
+
+.form-control input::placeholder {
+  color: #9aa6b2;
+}
+
+.password-toggle {
+  width: 44px;
+  align-self: stretch;
+  border: 0;
+  background: transparent;
+  color: #7a8795;
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: var(--azul-navbar);
+}
+
+.login-options {
+  margin: 2px 0 22px;
+}
+
+.login-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #667689;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.login-check input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--azul-navbar);
+}
+
+/* Acá cambié el botón verde brillante por azul institucional. El verde queda como acento, no como protagonista. */
+.login-submit {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--azul-navbar);
+  color: var(--blanco);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.login-submit:hover {
+  background: var(--azul-oscuro);
+}
+
+.login-access__notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 23px;
+  padding-top: 18px;
+  border-top: 1px solid #e3e8ed;
+  color: #778596;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.login-access__notice i {
+  margin-top: 2px;
+  color: var(--verde-oscuro);
+}
+
+
+@media (max-width: 840px) {
+  .login-main {
+    align-items: flex-start;
+    padding: 38px 0;
+  }
+
+  .login-panel {
+    max-width: 620px;
+    grid-template-columns: 1fr;
+  }
+
+  .login-institution__content {
+    padding: 38px 38px 36px;
+  }
+
+  .login-institution h1 {
+    font-size: 28px;
+  }
+
+  .login-institution__info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .login-access {
+    padding: 38px;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-header__inner {
+    min-height: 78px;
+  }
+
+  .login-brand__logo {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+  }
+
+  .login-brand__logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .login-brand__fallback {
+    width: 48px;
+    height: 48px;
+  }
+
+  .login-brand__text > span {
+    font-size: 10px;
+  }
+
+  .login-brand__text strong {
+    font-size: 15px;
+  }
+
+  .login-brand__text small,
+  .login-header__back {
+    display: none;
+  }
+
+  .login-main {
+    padding: 24px 0;
+  }
+
+  .login-panel {
+    border-radius: 6px;
+  }
+
+  .login-institution__content {
+    padding: 30px 24px;
+  }
+
+  .login-institution h1 {
+    font-size: 25px;
+  }
+
+  .login-institution > .login-institution__content > p {
+    font-size: 13px;
+  }
+
+  .login-institution__info {
+    display: none;
+  }
+
+  .login-institution__divider {
+    margin-bottom: 0;
+  }
+
+  .login-access {
+    padding: 30px 24px;
+  }
+
+  .login-access__header {
+    margin-bottom: 26px;
+  }
+
+  .login-footer__inner {
+    min-height: 68px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .login-brand__text strong {
+    font-size: 14px;
+  }
+
+  .login-institution h1 {
+    font-size: 23px;
+  }
+
+  .login-access {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .form-label-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+
+/* Acá agregué únicamente este enlace porque el footer del login necesita una salida clara al sitio institucional. */
+.footer__back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  color: var(--blanco);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.footer__back-link:hover {
+  color: var(--verde);
+}
