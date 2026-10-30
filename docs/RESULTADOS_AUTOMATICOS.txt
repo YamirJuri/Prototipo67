@@ -1,0 +1,85 @@
+VALIDACIONES
+OK consulta válida
+OK ingreso válido
+OK nombre con tildes
+OK nombre vacío
+OK nombre con etiquetas
+OK nombre con salto
+OK correo válido
+OK correo incompleto
+OK cabecera inyectada
+OK rechazo nombre x
+OK rechazo correo bad
+OK rechazo telefono abc
+OK rechazo mensaje corto
+OK rechazo mensaje xxxxxxxxxxxxxxx
+OK rechazo acepta false
+OK rechazo sitio_web bot
+OK rechazo tema inventado
+OK carrera fuera de catálogo
+OK tipo fuera de catálogo
+OK homologación incompleta
+OK homologación válida
+OK HTML escapado
+OK URL rechazada javascript:alert(1)
+OK URL rechazada data:text/html,x
+OK URL rechazada recursos/../secreto
+OK URL rechazada file:///etc/passwd
+OK URL rechazada //otro.org
+OK URL rechazada recursos/\hola
+OK recurso válido
+OK PDF metadatos válidos
+OK PDF demasiado grande
+OK PDF vacío
+OK archivo no PDF
+OK MIME no PDF
+OK máximo tres PDFs
+OK firma PDF
+OK firma falsa rechazada
+{"passed":37,"failed":0}
+
+RECORRIDOS
+OK página propuestas
+OK página terciarios
+OK página profesorados
+OK página planes
+OK página normativas
+OK página novedades
+OK página calendario
+OK página cronograma
+OK página ayuda
+OK página contacto
+OK página ingreso
+OK página homologaciones
+OK carrera inexistente ofrece salida
+OK ingreso conserva carrera
+OK contacto conserva tema
+OK plan ausente no ofrece PDF inexistente
+OK profesorados no inventa oferta
+OK Excel no publicado no crea descarga falsa
+OK calendario bisiesto
+OK carga de materias escapa contenido
+OK sólo una inscripción en inicio y última sección
+OK no hay buscador inexistente en cabecera
+OK cinco moldes sin fotos
+OK ningún controlador ejemplo confirma un registro falso
+{"passed":24,"failed":0}
+
+CRONOGRAMA
+OK sin carrera no mezcla horarios
+OK tres años derivados de filas y documentos
+OK no mezcla carreras
+OK filtra por año
+OK filtra por comisión
+OK comisiones corresponden al año
+OK archivo general incluye comisión B
+OK documentos separados por año
+OK año inválido vuelve a todos
+OK comisión inválida vuelve a todas
+OK carrera inválida no filtra por otra
+OK tabla de horarios incluye comisión y franja horaria
+OK archivo inexistente se informa y no genera enlace roto
+OK escape de materia desde Excel
+OK selector agrupa por categorías y conserva ID para PHP
+OK opciones escapan texto y valor
+{"passed":16,"failed":0}

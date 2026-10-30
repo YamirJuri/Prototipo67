@@ -1,0 +1,21 @@
+/* Pruebas de contenido/rutas, sin sustituir las comprobaciones visuales del navegador. */
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),c={console};c.window=c;vm.createContext(c);
+for(const file of ['01-configuracion','02-utilidades','03-paginas','04-formularios']) vm.runInContext(fs.readFileSync(path.join(root,'js/publico',file+'.js'),'utf8'),c);
+const a=c.ISP67;let n=0;
+const test=(name,fn)=>{fn();n++;console.log('OK '+name)};
+for(const [name,page] of Object.entries({propuestas:a.pages.careers(),terciarios:a.pages.careers('terciarios'),profesorados:a.pages.careers('profesorados'),planes:a.pages.plans(),normativas:a.pages.norms(),novedades:a.pages.news(),calendario:a.pages.calendar(),cronograma:a.pages.schedule(),ayuda:a.pages.help(),contacto:a.pages.contact(),ingreso:a.pages.enrollment(),homologaciones:a.pages.homologation()})) test('página '+name,()=>{assert(page.title&&page.content&&page.actions.length);assert(!/undefined|NaN/.test(page.content));});
+test('carrera inexistente ofrece salida',()=>assert.equal(a.pages.career('inventada').title,a.pages.notFound().title));
+test('ingreso conserva carrera',()=>assert(a.pages.enrollment('enfermeria').content.includes('name="carrera" value="enfermeria"')));
+test('contacto conserva tema',()=>assert(a.pages.contact('documentacion').content.includes('name="tema" value="documentacion"')));
+test('plan ausente no ofrece PDF inexistente',()=>{const p=a.pages.career('enfermeria','plan');assert(p.content.includes('pendiente de publicación'));assert(!p.content.includes('Abrir plan oficial'));});
+test('profesorados no inventa oferta',()=>assert(a.pages.careers('profesorados').content.includes('Todavía no hay propuestas')));
+test('Excel no publicado no crea descarga falsa',()=>assert(!a.pages.schedule().content.includes('Abrir cronograma en Excel')));
+test('calendario bisiesto',()=>{a.calendarMonth=new Date('2028-02-01T12:00:00');const html=a.pages.calendar().content;assert(html.includes('datetime="2028-02-29"'));assert(!html.includes('datetime="2028-02-30"'));});
+test('carga de materias escapa contenido',()=>{a.config.careers[0].years=[{title:'Primer año',subjects:[{name:'<script>alert(1)</script>',hours:'3',regime:'Anual'}]}];const html=a.pages.career('enfermeria','plan').content;assert(html.includes('&lt;script&gt;'));assert(!html.includes('<script>'));});
+const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
+test('sólo una inscripción en inicio y última sección',()=>{const home=index.split('<main id="mainHome">')[1].split('</main>')[0];assert.equal((home.match(/id="ingreso"/g)||[]).length,1);assert(home.lastIndexOf('<section')<home.indexOf('id="ingreso"'));assert(!home.includes('01</'));assert(!home.includes('Inscribirme a una mesa'));});
+test('no hay buscador inexistente en cabecera',()=>assert(!index.split('<div id="publicSite">')[0].includes('BUSCAR')));
+test('cinco moldes sin fotos',()=>{assert.equal(a.config.gallery.length,5);assert(a.config.gallery.every(x=>x.src===null));});
+test('ningún controlador ejemplo confirma un registro falso',()=>{for(const name of ['contacto','inscripcion','homologacion'])assert(fs.readFileSync(path.join(root,'php-ejemplo',name+'.php'),'utf8').includes('reply(501'));});
+console.log(JSON.stringify({passed:n,failed:0}));

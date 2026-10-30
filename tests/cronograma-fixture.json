@@ -1,0 +1,73 @@
+{
+  "notice": "DATOS DE PRUEBA. No son horarios ni materias reales del Instituto.",
+  "rows": [
+    {
+      "careerId": "enfermeria",
+      "year": 1,
+      "commission": "A",
+      "subject": "Materia de prueba A",
+      "day": "Lunes",
+      "start": "18:00",
+      "end": "20:00",
+      "room": "Aula demo 1",
+      "teacher": "Docente de prueba"
+    },
+    {
+      "careerId": "enfermeria",
+      "year": 1,
+      "commission": "B",
+      "subject": "Materia de prueba B",
+      "day": "Martes",
+      "start": "19:00",
+      "end": "21:00",
+      "room": "Aula demo 2",
+      "teacher": "Docente de prueba"
+    },
+    {
+      "careerId": "enfermeria",
+      "year": 2,
+      "commission": "A",
+      "subject": "Materia de prueba C",
+      "day": "Miércoles",
+      "start": "18:30",
+      "end": "20:30",
+      "room": "Aula demo 3",
+      "teacher": "Docente de prueba"
+    },
+    {
+      "careerId": "higiene",
+      "year": 1,
+      "commission": "C",
+      "subject": "Materia de prueba D",
+      "day": "Viernes",
+      "start": "17:00",
+      "end": "19:00",
+      "room": "Aula demo 4",
+      "teacher": "Docente de prueba"
+    }
+  ],
+  "documents": [
+    {
+      "careerId": "enfermeria",
+      "year": 1,
+      "commission": "todas",
+      "label": "DEMOSTRACIÓN · Archivo del primer año",
+      "file": "recursos/cronogramas/plantilla-cronograma.xlsx",
+      "updated": "Dato de prueba"
+    },
+    {
+      "careerId": "enfermeria",
+      "year": 2,
+      "commission": "A",
+      "label": "DEMOSTRACIÓN · Segundo año A",
+      "file": null
+    },
+    {
+      "careerId": "enfermeria",
+      "year": 3,
+      "commission": "A",
+      "label": "DEMOSTRACIÓN · Tercer año A",
+      "file": null
+    }
+  ]
+}
