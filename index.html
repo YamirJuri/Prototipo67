@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Instituto Superior 67 Yapeyú. Propuestas, ingreso, calendario académico, cronograma y consultas.">
+  <meta name="description"
+    content="Instituto Superior 67 Yapeyú. Propuestas, ingreso, calendario académico, cronograma y consultas.">
   <meta name="theme-color" content="#25816b">
   <title>Instituto Superior N.º 67 · Yapeyú</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- 1. Estilos heredados: sólo necesarios para los paneles del campus. -->
   <link rel="stylesheet" href="css/styles.css">
@@ -15,6 +18,7 @@
   <!-- 2. Diseño público actual: una única hoja ordenada por componente. -->
   <link rel="stylesheet" href="css/publico67.css">
 </head>
+
 <body data-surface="public">
   <div class="page-scroll-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#mainHome">Saltar al contenido principal</a>
@@ -33,17 +37,22 @@
         <button class="site-brand" data-route="inicio" aria-label="Instituto Superior 67 Yapeyú, ir al inicio">
           <!-- LOGO: reemplazar este molde por un img del escudo oficial. No se inventó un logo. -->
           <span class="logo-mould" aria-label="Espacio para el logo oficial">
-            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 9h32v30H8V9Zm0 22 10-11 10 12 6-7 6 7" stroke="currentColor" stroke-width="1.4"/><circle cx="31" cy="18" r="3" stroke="currentColor" stroke-width="1.4"/></svg>
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M8 9h32v30H8V9Zm0 22 10-11 10 12 6-7 6 7" stroke="currentColor" stroke-width="1.4" />
+              <circle cx="31" cy="18" r="3" stroke="currentColor" stroke-width="1.4" />
+            </svg>
             <small>LOGO</small>
           </span>
-          <span class="brand-copy"><span>INSTITUTO SUPERIOR N.º 67</span><strong>Yapeyú</strong><small>Educación superior · Santa Fe</small></span>
+          <span class="brand-copy"><span>INSTITUTO SUPERIOR N.º 67</span><strong>Yapeyú</strong><small>Educación
+              superior · Santa Fe</small></span>
         </button>
         <nav class="public-nav" aria-label="Navegación principal">
           <button id="menuToggle" class="mobile-menu" aria-expanded="false" aria-controls="mainMenu">☰ MENÚ</button>
           <ul id="mainMenu" class="main-menu">
             <li><button data-route="inicio">INICIO</button></li>
             <li class="has-dropdown">
-              <button class="nav-trigger" aria-expanded="false" aria-controls="proposalMenu">PROPUESTAS <span aria-hidden="true">⌄</span></button>
+              <button class="nav-trigger" aria-expanded="false" aria-controls="proposalMenu">PROPUESTAS <span
+                  aria-hidden="true">⌄</span></button>
               <ul class="dropdown" id="proposalMenu">
                 <li><button data-route="carreras">Toda la propuesta académica</button></li>
                 <li><button data-route="terciarios">Terciarios</button></li>
@@ -52,7 +61,8 @@
               </ul>
             </li>
             <li class="has-dropdown">
-              <button class="nav-trigger" aria-expanded="false" aria-controls="studentMenu">ESTUDIANTES <span aria-hidden="true">⌄</span></button>
+              <button class="nav-trigger" aria-expanded="false" aria-controls="studentMenu">ESTUDIANTES <span
+                  aria-hidden="true">⌄</span></button>
               <ul class="dropdown" id="studentMenu">
                 <li><button data-route="inscripcion">Inscripción a una carrera</button></li>
                 <li><button data-route="calendario">Calendario académico</button></li>
@@ -69,8 +79,13 @@
           </ul>
         </nav>
         <button class="campus-access" data-campus="login">
-          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m3 12 13-7 13 7-13 7-13-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 16v8c5 4 9 4 14 0v-8M29 13v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <span><strong>Campus virtual</strong><small>Ingresar a mi cuenta</small></span><span class="campus-chevron" aria-hidden="true">↗</span>
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="m3 12 13-7 13 7-13 7-13-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M9 16v8c5 4 9 4 14 0v-8M29 13v10" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" />
+          </svg>
+          <span><strong>Campus virtual</strong><small>Ingresar a mi cuenta</small></span><span class="campus-chevron"
+            aria-hidden="true">↗</span>
         </button>
       </div>
     </header>
@@ -82,31 +97,74 @@
       <h1 class="visually-hidden">Tu recorrido en el Superior 67 · Yapeyú</h1>
       <section id="gallery" class="gallery" aria-roledescription="carrusel" aria-label="Galería institucional">
         <div id="galleryTrack" class="gallery-track"></div>
-        <div class="gallery-overlay-controls"><button id="galleryPrevious" class="gallery-arrow previous" aria-label="Imagen anterior">←</button><button id="galleryNext" class="gallery-arrow next" aria-label="Imagen siguiente">→</button></div>
-        <div class="gallery-bottom page-width"><div id="galleryProgress" class="gallery-progress" aria-label="Elegir imagen"></div><button id="galleryPause" class="gallery-pause" aria-label="Pausar galería" aria-pressed="false">Ⅱ</button></div>
+        <div class="gallery-overlay-controls"><button id="galleryPrevious" class="gallery-arrow previous"
+            aria-label="Imagen anterior">←</button><button id="galleryNext" class="gallery-arrow next"
+            aria-label="Imagen siguiente">→</button></div>
+        <div class="gallery-bottom page-width">
+          <div id="galleryProgress" class="gallery-progress" aria-label="Elegir imagen"></div><button id="galleryPause"
+            class="gallery-pause" aria-label="Pausar galería" aria-pressed="false">Ⅱ</button>
+        </div>
       </section>
 
       <section class="home-orientation page-width">
-        <header class="home-section-title reveal"><h2>Encontrá lo que necesitás.</h2><p>Si estás por empezar, mirá las propuestas. Si ya estudiás acá, encontrá tus fechas y trámites.</p></header>
+        <header class="home-section-title reveal">
+          <h2>Encontrá lo que necesitás.</h2>
+          <p>Si estás por empezar, mirá las propuestas. Si ya estudiás acá, encontrá tus fechas y trámites.</p>
+        </header>
         <div class="orientation-layout">
           <div class="orientation-links">
-            <button class="orientation-row reveal" data-route="carreras"><span><small>QUIERO ESTUDIAR</small><strong>Conocer las propuestas</strong><span>Carreras, planes y cómo empezar.</span></span><b aria-hidden="true">↗</b></button>
-            <button class="orientation-row reveal" data-route="calendario"><span><small>QUIERO ORGANIZARME</small><strong>Calendario y fechas importantes</strong><span>Las fechas académicas, en un solo lugar.</span></span><b aria-hidden="true">↗</b></button>
-            <button class="orientation-row reveal" data-route="ayuda"><span><small>NECESITO UNA MANO</small><strong>Ayuda para seguir</strong><span>Preguntas y respuestas para encontrar tu próximo paso.</span></span><b aria-hidden="true">↗</b></button>
+            <button class="orientation-row reveal" data-route="carreras"><span><small>QUIERO
+                  ESTUDIAR</small><strong>Conocer las propuestas</strong><span>Carreras, planes y cómo
+                  empezar.</span></span><b aria-hidden="true">↗</b></button>
+            <button class="orientation-row reveal" data-route="calendario"><span><small>QUIERO
+                  ORGANIZARME</small><strong>Calendario y fechas importantes</strong><span>Las fechas académicas, en un
+                  solo lugar.</span></span><b aria-hidden="true">↗</b></button>
+            <button class="orientation-row reveal" data-route="ayuda"><span><small>NECESITO UNA
+                  MANO</small><strong>Ayuda para seguir</strong><span>Preguntas y respuestas para encontrar tu próximo
+                  paso.</span></span><b aria-hidden="true">↗</b></button>
           </div>
-          <aside id="portraitGallery" class="home-media portrait-gallery reveal" aria-roledescription="carrusel" aria-label="Galería vertical de la comunidad">
-            <div class="portrait-viewport"><div id="portraitTrack" class="portrait-track"></div></div>
-            <div class="portrait-controls"><div id="portraitProgress" class="portrait-progress" aria-label="Elegir imagen vertical"></div><button id="portraitPause" class="portrait-pause" type="button" aria-label="Pausar galería vertical" aria-pressed="false">Ⅱ</button></div>
-            <div class="portrait-arrows"><button id="portraitPrevious" type="button" aria-label="Imagen vertical anterior">↑</button><button id="portraitNext" type="button" aria-label="Imagen vertical siguiente">↓</button></div>
+          <aside id="portraitGallery" class="home-media portrait-gallery reveal" aria-roledescription="carrusel"
+            aria-label="Galería vertical de la comunidad">
+            <div class="portrait-viewport">
+              <div id="portraitTrack" class="portrait-track"></div>
+            </div>
+            <div class="portrait-controls">
+              <div id="portraitProgress" class="portrait-progress" aria-label="Elegir imagen vertical"></div><button
+                id="portraitPause" class="portrait-pause" type="button" aria-label="Pausar galería vertical"
+                aria-pressed="false">Ⅱ</button>
+            </div>
+            <div class="portrait-arrows"><button id="portraitPrevious" type="button"
+                aria-label="Imagen vertical anterior">↑</button><button id="portraitNext" type="button"
+                aria-label="Imagen vertical siguiente">↓</button></div>
           </aside>
         </div>
       </section>
 
-      <section class="home-news page-width reveal"><header class="home-section-title inline-title"><div><h2>Novedades</h2></div><button class="action-link" data-route="novedades">Ver novedades ↗</button></header><div class="news-empty"><h3>Los próximos avisos, acá.</h3><p>Todavía no hay comunicaciones publicadas en este portal.</p></div></section>
+      <section class="home-news page-width reveal">
+        <header class="home-section-title inline-title">
+          <div>
+            <h2>Novedades</h2>
+          </div><button class="action-link" data-route="novedades">Ver novedades ↗</button>
+        </header>
+        <div class="news-empty">
+          <h3>Los próximos avisos, acá.</h3>
+          <p>Todavía no hay comunicaciones publicadas en este portal.</p>
+        </div>
+      </section>
 
 
       <!-- ÚNICO INGRESO DEL INICIO. Franja de extremo a extremo, sin número 01. -->
-      <section class="home-enrollment" id="ingreso"><div class="page-width reveal"><div><h2>Inscribirme a una carrera</h2><p>Elegí la propuesta que te interese y consultá cómo iniciar tu ingreso. No tenés que resolverlo todo de una vez.</p></div><div class="actions"><button class="action-button" data-route="inscripcion">Quiero empezar ↗</button><button class="action-link" data-route="carreras">Primero quiero ver las carreras →</button></div></div></section>
+      <section class="home-enrollment" id="ingreso">
+        <div class="page-width reveal">
+          <div>
+            <h2>Inscribirme a una carrera</h2>
+            <p>Elegí la propuesta que te interese y consultá cómo iniciar tu ingreso. No tenés que resolverlo todo de
+              una vez.</p>
+          </div>
+          <div class="actions"><button class="action-button" data-route="inscripcion">Quiero empezar ↗</button><button
+              class="action-link" data-route="carreras">Primero quiero ver las carreras →</button></div>
+        </div>
+      </section>
     </main>
   </div>
   <!-- Contenedor de páginas públicas: el router conserva un único encabezado por sección. -->
@@ -129,7 +187,8 @@
                 style="display:block;margin-top:3px">Acceso institucional</small></div>
           </div>
           <h2 id="authSideTitle">Accedé a tu cuenta</h2>
-          <p>Ingresá a tu espacio de estudio, consultá tus materias y gestioná tus inscripciones.</p><p class="note">Demostración interactiva: los datos y las operaciones de este portal son de prueba.</p>
+          <p>Ingresá a tu espacio de estudio, consultá tus materias y gestioná tus inscripciones.</p>
+          <p class="note">Demostración interactiva: los datos y las operaciones de este portal son de prueba.</p>
           <div class="note">Alumno: inscripciones, materias, finales y aula virtual.<br /><br />Docente: cursos,
             solicitudes, actividades, notas y asistencia.<br /><br />Administrador: cuenta institucional creada por alta
             interna; gestión académica, usuarios, inventario, finales y reportes.</div>
@@ -223,7 +282,8 @@
               <div class="field-error" id="errResetEmail"></div>
             </div>
             <button class="btn btn-primary" onclick="validateReset()" style="width:100%">Enviar enlace</button>
-            <div class="note" style="margin-top:16px">En esta demostración no se envían correos. El mensaje es el mismo exista o no
+            <div class="note" style="margin-top:16px">En esta demostración no se envían correos. El mensaje es el mismo
+              exista o no
               la cuenta.</div>
             <p style="text-align:center;margin-top:18px"><a href="javascript:void(0)"
                 onclick="showAuth('login');return false" style="color:var(--blue)">Volver al login</a></p>
@@ -256,7 +316,7 @@
     <div class="modal-card" id="modalCard"></div>
   </div>
   <div class="toast hidden" id="toast"></div>
-  
+
 
 
 
@@ -265,20 +325,55 @@
   <!-- FOOTER: contacto visible y accesos conectados a formularios, no a saltos ambiguos. -->
   <footer class="footer shared-footer" id="contacto">
     <div class="page-width footer-grid">
-      <div><strong class="footer-brand">Superior 67 · Yapeyú</strong><p>Av. 12 de Octubre 9300<br>Santa Fe, Argentina</p><p><a href="tel:+543424827200">(0342) 482-7200</a></p><p><a href="mailto:institutosuperior67@gmail.com">institutosuperior67@gmail.com</a></p></div>
-      <div><h2>CONSULTAS Y AYUDA</h2><ul><li><button data-route="contacto">Contactar al Instituto</button></li><li><button data-route="ayuda">Preguntas frecuentes</button></li><li><button data-campus="reset">Recuperar acceso</button></li><li><a href="https://www.instagram.com/institutosuperior67yapeyu/" target="_blank" rel="noopener">Instagram ↗</a></li></ul></div>
-      <div><h2>ESTUDIANTES</h2><ul><li><button data-route="inscripcion">Ingreso a una carrera</button></li><li><button data-route="calendario">Calendario académico</button></li><li><button data-route="cronograma">Cronograma de cursado</button></li><li><button data-route="homologaciones">Presentar homologaciones</button></li><li><button data-route="planes">Planes de estudio</button></li></ul></div>
+      <div><strong class="footer-brand">Superior 67 · Yapeyú</strong>
+        <p>Av. 12 de Octubre 9300<br>Santa Fe, Argentina</p>
+        <p><a href="tel:+543424827200">(0342) 482-7200</a></p>
+        <p><a href="mailto:institutosuperior67@gmail.com">institutosuperior67@gmail.com</a></p>
+      </div>
+      <div>
+        <h2>CONSULTAS Y AYUDA</h2>
+        <ul>
+          <li><button data-route="contacto">Contactar al Instituto</button></li>
+          <li><button data-route="ayuda">Preguntas frecuentes</button></li>
+          <li><button data-campus="reset">Recuperar acceso</button></li>
+          <li><a href="https://www.instagram.com/institutosuperior67yapeyu/" target="_blank" rel="noopener">Instagram
+              ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>ESTUDIANTES</h2>
+        <ul>
+          <li><button data-route="inscripcion">Ingreso a una carrera</button></li>
+          <li><button data-route="calendario">Calendario académico</button></li>
+          <li><button data-route="cronograma">Cronograma de cursado</button></li>
+          <li><button data-route="homologaciones">Presentar homologaciones</button></li>
+          <li><button data-route="planes">Planes de estudio</button></li>
+        </ul>
+      </div>
     </div>
     <div class="page-width footer-location">
-      <div class="location-copy"><h2>Vení al Instituto</h2><p>Av. 12 de Octubre 9300</p><p>Yapeyú · Santa Fe, Argentina</p><a href="https://www.google.com/maps/search/?api=1&query=Avenida+12+de+Octubre+9300+Santa+Fe+Argentina" target="_blank" rel="noopener">Cómo llegar <span aria-hidden="true">↗</span></a></div>
-      <div class="footer-map"><iframe title="Ubicación del Superior 67 en Av. 12 de Octubre 9300, Santa Fe" src="https://maps.google.com/maps?q=Avenida%2012%20de%20Octubre%209300%2C%20Santa%20Fe%2C%20Argentina&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="location-copy">
+        <h2>Vení al Instituto</h2>
+        <p>Av. 12 de Octubre 9300</p>
+        <p>Yapeyú · Santa Fe, Argentina</p><a
+          href="https://www.google.com/maps/search/?api=1&query=Avenida+12+de+Octubre+9300+Santa+Fe+Argentina"
+          target="_blank" rel="noopener">Cómo llegar <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-map"><iframe title="Ubicación del Superior 67 en Av. 12 de Octubre 9300, Santa Fe"
+          src="https://maps.google.com/maps?q=Avenida%2012%20de%20Octubre%209300%2C%20Santa%20Fe%2C%20Argentina&z=16&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     </div>
-    <div class="footer-bottom page-width"><p>© <span id="currentYear">2026</span> Superior 67 · Yapeyú</p><p>Prototipo: los trámites del campus son de demostración.</p></div>
+    <div class="footer-bottom page-width">
+      <p>© <span id="currentYear">2026</span> Superior 67 · Yapeyú</p>
+      <p>Prototipo: los trámites del campus son de demostración.</p>
+    </div>
   </footer>
 
   <!-- Control móvil con alternativa de teclado: Mayús + flechas mueve; Escape restablece. -->
-  <button id="backToTop" class="back-to-top" aria-label="Volver arriba. Podés arrastrar este botón para moverlo." aria-describedby="floatingHelp" title="Volver arriba · Arrastrá para mover">↑</button>
-  <span id="floatingHelp" class="visually-hidden">Con teclado: Mayús y flechas para mover. Escape para restablecer. Enter para volver arriba.</span>
+  <button id="backToTop" class="back-to-top" aria-label="Volver arriba. Podés arrastrar este botón para moverlo."
+    aria-describedby="floatingHelp" title="Volver arriba · Arrastrá para mover">↑</button>
+  <span id="floatingHelp" class="visually-hidden">Con teclado: Mayús y flechas para mover. Escape para restablecer.
+    Enter para volver arriba.</span>
 
   <!-- CAMPUS HEREDADO -->
   <script src="js/campus/sistema-demo.js"></script>
@@ -294,4 +389,5 @@
   <script src="js/publico/08-controles.js"></script>
   <script src="js/publico/09-inicio.js"></script>
 </body>
+
 </html>
